@@ -7,8 +7,7 @@ const mainDiv = document.querySelector(".main");
 
 let setTodo = (text)=>{
   const fragment = document.createDocumentFragment();
-  // const todoDiv = document.createElement("div");
-  // todoDiv.className = "todo-div";
+
   const elemDiv = unList
   .appendChild(document.createElement("div"));
   elemDiv.className = "elem-div";
@@ -17,10 +16,8 @@ let setTodo = (text)=>{
   btn.className = "list-btn";
   li.textContent = text;
   btn.textContent = "remove";
-  // fragment.appendChild(todoDiv);
-  // mainDiv.appendChild(fragment);
+
   btn.addEventListener("click", (evt)=>{
-    // console.log(evt.target.previousElementSibling.innerText);
     removeElment(evt);
   })
 }
@@ -42,7 +39,6 @@ addBtn.addEventListener("click", ()=>{
 })
 
 const removeElment = (evt)=>{
-  console.log(evt.target.parentElement);
   const removeDiv = evt.target.parentElement;
   const val = evt.target.previousElementSibling.innerText;
   localStorage.removeItem(val);
